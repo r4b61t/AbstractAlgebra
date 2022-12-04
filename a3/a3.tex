@@ -1,0 +1,43 @@
+\documentclass[]{article}
+\title{Assignment 3}
+\author{Chayapon Thunsetkul 6280742}
+\usepackage{amssymb,amsmath,mathtools,amsfonts,enumitem,tasks,physics,mathrsfs}
+\usepackage[margin=1in]{geometry}
+\newcommand\Label[1]{&\refstepcounter{equation}(\theequation)\ltx@label{#1}&}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{float}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstset{frame=tb, language=Java, aboveskip=3mm, belowskip=3mm, showstringspaces=false, columns=flexible, basicstyle={\small     tfamily}, numbers=left, numberstyle=\color{gray}, keywordstyle=\color{blue}, commentstyle=\color{dkgreen}, stringstyle=\color{mauve}, breaklines=true, breakatwhitespace=true, showtabs=false, tabsize=3 }
+\newcommand{\R}{\mathbb{R}}
+\begin{document}
+\maketitle
+\begin{description}
+    \item[Question 1. ] Let $$h = \begin{pmatrix}
+        1 & 1 \\ 0 & 1
+    \end{pmatrix}$$ then, for $n \in \mathbb{Z}$ we have \begin{align*}
+        h^n = \begin{pmatrix}
+        1 & 1 \\ 0 & 1
+    \end{pmatrix}^n = \begin{pmatrix}
+        1 & n \\ 0 & 1
+    \end{pmatrix}    \end{align*}  and the determinant of $h^n$ is 1. Futhermore, the identity matrix is simply $h^0$. Thus, $H = \langle h \rangle \leqslant \text{GL}_2$
+\item[Question 2. ] \begin{enumerate}
+    \item The positive divisors of 20 are $\{1,2,4,5,10,20\}$, hence $\mathbb{Z}$ has 6 subgroups ; $\{0\},\langle 1 \rangle, \langle 2 \rangle,\langle 4 \rangle,\langle 5 \rangle,\langle 10 \rangle$
+    \item The positive divisors of 21 are $\{1,3,7,21\}$, hence $\mathbb{Z}$ has 4 subgroups ; $\{e\}, \langle g \rangle , \langle g^{3} \rangle , \langle g^{7} \rangle $ where $e$ is the identity in $G$.
+\end{enumerate}
+\item[Question 4.] $\langle 10 \rangle \cap \langle 21 \rangle $ is simply $\{g : g = [\text{lcm}(10,21) \text{ mod} (24)]^n , n \in \mathbb{Z}\}$ since the elements in the intersection must be divisible by 10 and 21. Thus, $\langle 10 \rangle \cap \langle 24 \rangle  = \langle 18 \rangle$
+\item[Question 5. ] The cyclic subgroups of $U(15)$ are $\langle 1 \rangle,\langle 2 \rangle, \langle 4 \rangle,\langle 7 \rangle,\langle 11 \rangle,\langle 14 \rangle$
+\item[Question 6.] We will prove by contraposition. The converse of the proposition is \textit{if $G$ is a non-cylic group then there exists non-trivial proper subgroup of $G$}.
+
+First, assume that $G$ is a non-cyclic subgroup. Then, there must exist two elements $a,b \in G$ such that for any $n \in \mathbb{Z}$, $a \neq b^n$ and $b \neq a^n$. Now, we can let $a$ be a generator of cyclic subgroup of $G$; $\langle a \rangle  < G$. This subgroup is proper since $b \notin \langle a \rangle$. Thus, the original proposition must be true.
+
+\item[Question 7. ] Let $\mu = o(a)$ and $\nu = o(b)$. Now, since $ab = ba$, we can distribute $(ab)^{\mu\nu} = a^{\mu\nu}b^{\mu\nu} = e^{\nu}e^{\mu} = e$. It follows that $\mu\nu$ must be an integer multiple of the order of $ab$. Thus, $o(ab) | o(a)o(b)$. 
+\item[Question 8. ] By the Fundamental Theorem of Cyclic Groups, there is exactly one subgroup of $G = \langle g \rangle$ of order $d$, namely, $\langle g^{k} \rangle$ where $n = dk$. Now, the order of this group is clearly $d$. Thus, by a lemma, there are $\phi(d)$ elements that can generate $\langle g^k \rangle $ .
+\item[Question 9.] By the Fundamental Theorem of Cyclic Groups, the divisors of $n$ are clearly $\{1,7,n\}$. The only positive integer with this set of divisors is 49. Generally, for any prime number ,$p$ , we will have $n = p^2$ since the divisors of $p^2$ are $\{1,p,p^2\}$.
+\end{description}
+\end{document}

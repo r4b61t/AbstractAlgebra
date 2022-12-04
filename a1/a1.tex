@@ -1,0 +1,54 @@
+\documentclass[]{article}
+\title{Assignment 1}
+\author{Chayapon Thunsetkul 6280742}
+\usepackage{amsmath,mathtools,amsfonts,enumitem,tasks,physics,mathrsfs}
+\usepackage[margin=1in]{geometry}
+\newcommand\Label[1]{&\refstepcounter{equation}(\theequation)\ltx@label{#1}&}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstset{frame=tb, language=Java, aboveskip=3mm, belowskip=3mm, showstringspaces=false, columns=flexible, basicstyle={\small	tfamily}, numbers=left, numberstyle=\color{gray}, keywordstyle=\color{blue}, commentstyle=\color{dkgreen}, stringstyle=\color{mauve}, breaklines=true, breakatwhitespace=true, showtabs=false, tabsize=3 }
+\newlength{\jeroenlen}
+\newenvironment{example}[2][label = {(\alph*)}]
+{\settowidth{\jeroenlen}{\textbf{#2}}%
+	\begin{description}[leftmargin=\jeroenlen,labelwidth=0pt,labelsep=0pt]
+		\item[#2]%
+		\begin{enumerate}[#1,leftmargin=1.5em,labelsep=.5em]}
+		{\end{enumerate}\end{description}}
+\begin{document}
+\maketitle
+\begin{description}
+    \item[Question 1.] 
+    \begin{enumerate}
+        \item There are 5 available elements that an element can be mapped to. Hence, there are total of $5^5$ possible mappings for the set $S$.
+        \item Since an element can only be mapped to a unique element. The total number of bijections from $S$ to itself is equal to the number of the permutations of the elements in $S$, which is $5!$.
+    \end{enumerate} 
+    \item[Question 2.]
+    \begin{enumerate}
+        \item Suppose $f$ and $g$ is injective then for all $a \in A$ we must have a unique $b \in B$ such that $f(a) = b$. Similarly, for all $b\in B$, we have a unique $c \in C$ such that $g(b) = c$. Then, it follows that for all $a \in A$ we have a unique element $c \in C$ such that $c = g(b) = g(f(a))$.
+        \item Suppose $g \circ f$ is surjective, then for every $c \in C$ there must exist atleast one element $a \in A$ such that $g \circ f (a) = c$. Now, suppose $g$ is injective, then for all $b \in B$ there must exist a unique element $c \in C$ such that $g(b) = c$. However, since $g \circ f$ is onto, every elements $b \in B$ must have atleast an element $a \in A$ such that $f(a) = b$. Hence, $f$ must be surjective.
+    \end{enumerate}
+    \item[Question 3.] The relation is not an equivalence relation since it doesn't satisfy the transitive property. For example, by definition of the relation, $1 \sim 2$ and $2\sim3 $ but $1 \not\sim 3$.
+    \item[Question 4.] Suppose $a,b \in S$ and $b \in [a]$. Then, for all $b_i \in [b]$, $b_i \sim b$ and by transitive property, $b_i \sim a$. Hence, all $b_i$ must be elements of $[a]$. Similarly, by transitive property, all $a_i \in a$ are elements of $[b]$. We have $[b] \subset [a]$ and $[a] \subset [b]$. Hence, $[b] = [a]$.
+    \item[Question 5.] For all $a \in S$ we have $f(a) = f(a) \implies a\sim a$. This satisfies the reflexive property. Next, for all $a,b \in S$ that satisfies $f(a) = f(b)$, we must also have $f(b) = f(a)$, hence, $a \sim b$ and $b \sim a$. This satisfies the symmetric property. Now, for all $a,b,c\in S$ that satisfy $f(a) = f(b)$ and $f(b) = f(c)$. We must also have $f(a) = f(c)$. Hence, we have $a \sim b$, $b \sim c$, and $a \sim c$. This satisfies the transitive property. We conclude that the relation $\sim$ is an equivalence relation.
+    \item[Question 6.] The relation $\sim$ is not an equivalence relation since it does not satisfies the transitive property. A counter-example is $1 \sim 3$ and $3 \sim 6$ but $1 \not\sim 6$.
+    \item[Question 7.] Assume that $\forall a,b \in \mathbb{N}, p|ab  $ and further assume that $p$ does not divide one of $a$ or $b$. Without the loss of generality, let's assume that $p$ doesn't divide $a$. It follows that $a$ and $p$ are co-primes and hence for some intergers $r,s$, we must have $ar+ps = 1$. Then, we have \begin{align*}
+        b &= b(ar+ps)\\
+        b &= abr + ps
+    \end{align*} Since, $p$ divides $ab$, there exist an integer $k$ such that \begin{align*}
+        b &= pkr + ps\\
+        b &= p(kr +s)
+    \end{align*} Hence, $p$ must divides $b$.
+    \item[Question 8.] Example: $3\times 5 = 3\times 0$ but $5 \neq 0$. For an equivalence classes $\mathbb{Z}_p$ where $p$ is a prime. Then, for all $a \in \mathbb{Z}_p$, we have $ar+ps = \text{gcd}(a,p) = 1$. It follows that $ar = 1$ modulo $p$ and $ra = 1$ modulo $p$. Hence, $r$ is an inverse of $a$. Thus, for any $b,c \in \mathbb{Z}_4$, if $ab = ac$, we have $b=c$.
+    \item[Question 9.] For all $n \in \mathbb{Z}$, we have $7(5n+3) - 5(7n + 4) = 1$. It follows that the $\text{gcd}(5n+3,7n+4) = 1$ and thus, $5n+3$ and $7n+4$ are relatively prime.
+    \item[Question 10.] \begin{enumerate}
+        \item Let $n = 8$ then both $n$ and $n+1$ are composite. 
+        \item Let $n=5!$. We have $n$ is composite. Also, $n+1 = 11^2$ is composite. Futhermore, it follows that $n+i, i \in \{2,3,4,5\}$ are divisible by $i$.
+    \end{enumerate} 
+\end{description}
+\end{document}

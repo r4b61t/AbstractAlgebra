@@ -1,0 +1,36 @@
+\documentclass[]{article}
+\title{Assignment 6}
+\author{Chayapon Thunsetkul 6280742}
+\usepackage{amsmath,mathtools,amsfonts,enumitem,tasks,physics,mathrsfs}
+\usepackage[margin=1in]{geometry}
+\newcommand\Label[1]{&\refstepcounter{equation}(\theequation)\ltx@label{#1}&}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstset{frame=tb, language=Java, aboveskip=3mm, belowskip=3mm, showstringspaces=false, columns=flexible, basicstyle={\small	tfamily}, numbers=left, numberstyle=\color{gray}, keywordstyle=\color{blue}, commentstyle=\color{dkgreen}, stringstyle=\color{mauve}, breaklines=true, breakatwhitespace=true, showtabs=false, tabsize=3 }
+\newcommand{\Z}{\mathbb{Z}}
+\begin{document}
+\maketitle
+\begin{enumerate}
+    \item Assume that $o(g) = n $ then $g^n = e_G$ where $e_G$ is the identity in $G$. Then, by a lemma, we have $\theta(g^n) = \theta(e_G) = e_H$ where $e_H$ is the identity in $H$.
+    Also, by the definition of an isomorphism, $\theta(g^n) = (\theta(g))^n = e_H^n = e_H$.
+    It follows from this that $o(\theta(g)) | n = o(g)$.
+
+    Next, suppose that $o(\theta(g)) = m$ and $\theta(g)^m = e_H$. Then, since $\theta$ is an isomorphism, $\theta^{-1}$ is also an isomorphism, and $g^m = \theta^{-1}(\theta(g)^m) = \theta^{-1}(e_H) = e_G$
+    It follows from this that $o(g) | m = o(\theta(g))$.
+
+    Thus, $o(g) = o(\theta(g))$
+
+    \item Given any $x \in \mathbb{Z}_{50}$ we can find an integer $a$ such that $7a = x \mod{50}$. This follows from the fact that 7 and 50 are coprime and 7 can generate $\mathbb{Z}_{50}$. Now, $\theta(x) = \theta(7a) = a\theta(7) = 13a$.
+
+    \item We have $\lambda_d(g) = dg$ for $g \in G$. Reading off the \textbf{d} in the Cayley table gives the map (a d f g)(b h e c). Representing this into numbers; (1 4 6 7)(2 8 5 3).
+    \item By a lemma, we have $o(6) = 5$ in $\Z_{30}$, $o(15) = 3$ in $\Z_{45}$, and $o(4) = 25$ in $\Z_{25}$. By another lemma, the order of $(6,15,4)$ in $\Z_{30} \times \Z_{45} \times \Z_{25}$ is the $\text{lcm}(5,3,25) = 25$.
+    \item Let $a \in \Z_{25}$ then $b \in \Z_{5}$ and $o((a,b)) = 5$ in $\Z_{25} \times \Z_{5} \iff \text{lcm}(o(a),o(b)) = 5$. Since 5 is a prime $o(a),o(b)$ must either be 1 or 5 but not both 1. Suppose $o(a) = 5$ then $25/\text{gcd}(a,25) = 5 \iff \text{gcd}(a,25) = 5$ which leaves 4 possible values of $a$. Suppose $o(b) = 5$ then $5/\text{gcd}(b,5) = 5 \iff \text{gcd}(b,5) =1$. This leaves 4 possible values of $b$. 
+    Adding all the possible values when $o(a) = 5$ or $o(b) = 5$ or $o(a) =1 $ or $o(b) = 1$ and subtracting the case where $o(a) = o(b) = 1$ gives $1 + 1 + 4 +4 -1 = 9$.
+\end{enumerate}
+\end{document}

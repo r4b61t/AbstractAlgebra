@@ -1,0 +1,47 @@
+\documentclass[]{article}
+\title{Assignment 8}
+\author{Chayapon Thunsetkul 6280742}
+\usepackage{amsmath,mathtools,amsfonts,enumitem,tasks,physics,mathrsfs}
+\usepackage[margin=1in]{geometry}
+\newcommand\Label[1]{&\refstepcounter{equation}(\theequation)\ltx@label{#1}&}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstset{frame=tb, language=Java, aboveskip=3mm, belowskip=3mm, showstringspaces=false, columns=flexible, basicstyle={\small	tfamily}, numbers=left, numberstyle=\color{gray}, keywordstyle=\color{blue}, commentstyle=\color{dkgreen}, stringstyle=\color{mauve}, breaklines=true, breakatwhitespace=true, showtabs=false, tabsize=3 }
+\begin{document}
+\maketitle
+\begin{enumerate}
+    \item The forward implication is trivial; If $\theta$ is injective then there would only be one element that maps to the identity in $H$. Since $\theta$ is a homomorphism, it follows that this element must be the identity in $G$. Next, assume that $\ker \theta = \{1\}$. Then for any $x,y \in G$ such that $\theta(x) = \theta(y)$, we have \begin{align*}
+        f(x) - f(y) &= e_H\\
+        f(x-y) &= e_H\\
+        x-y &= e_G\\
+        x &= e_G + y\\
+        x &=y
+    \end{align*} Thus, $\theta$ is a homomorphism.
+    \item
+    \item From the first isomorphism theorem, if $\theta:G \rightarrow H$ is a homomorphism, then the mapping from $G/ \ker \theta$ to $\theta(G)$ given $g \ker \theta \mapsto \theta(g)$ is an isomorphism.
+
+Now, I follow the pattern and define a map $\sigma: G/N \rightarrow \phi(G)$ where $\phi$ is the trivial map and $\sigma(gN) = g$. It follows that $N \in \ker \sigma$. Next, consider $\sigma^{-1} (g) = gN$, then $\ker (\sigma^{-1}) = \{g \in G, \sigma^{-1} (g) = 1_{G/N}\}$. From a lemma, $gN = g$ only if $g \in N$, then,$ \ker (\sigma^{-1}) = \{g \in N\} = N$
+\item \begin{enumerate}[label = \arabic*)]
+    \item We have $f(0) = 0$ and $f(6) = 6$ so $f(0) \neq f(6)$ but $0 = 6$.
+ \item Since $1 \in \mathbb{Z}_6$ is the generator, we have $f(g) = f(1\times g) = f(1) \times f(g)$ for all $g \in \mathbb{Z}_6 $and let us denote $f(1) = a$. Then, $f(g) = ga$. We also need $f(0) = 0$, hence, $f(0) = f(6) = 6a$. We can say that $6a = 0$ mod $9$ then \begin{align*}
+        6a &= 0 \mod{9}\\
+        6a &= 9 \mod{9}\\
+        2a &= 3 \mod{3}\\
+        2a &= 0 \mod{3}\\
+        a &= 0 \mod{3}
+    \end{align*} Thus, $a\in \{0,3,6\} $and there are 3 homomorphisms.
+\end{enumerate}
+\item For all $k \in K$ and $k_1 \in K_1$ we have $ak = ka , \forall g \in G$ and $g_1k_1 = k_1g_1, \forall g_1 \in G_1$. Then \begin{align*}
+    (a,a_1)(k,k_1) &= (ak,a_1k_1)\\
+    &= (ka,k_1a_1)\\
+    &= (k,k_1)(a,a_1)
+\end{align*} Thus, $K\times K_1$ is normal in $G\times G_1$. Now, define a map $\theta(g,g_1) \mapsto (g,g_1)(K,K_1)$, then $K \times K_1$ is a $\ker \theta$. By the first isomorphism theorem, it follows that $(G\times G_1) / (K\times K_1) \cong \theta(G\times G_1)$. Since,$ \theta(G\times G_1) = (G/K \times G_1/K_1)$, thus $(G\times G_1) / (K\times K_1) \cong G/K \times G_1/K_1$
+\item 
+\end{enumerate}
+\end{document}
